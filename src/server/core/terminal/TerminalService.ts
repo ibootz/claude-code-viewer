@@ -98,11 +98,7 @@ const LayerImpl = Effect.gen(function* () {
   );
 
   if (!ruspty) {
-    return disabledService(
-      process.platform === "win32"
-        ? "@replit/ruspty has no Windows build"
-        : "@replit/ruspty failed to load",
-    );
+    return disabledService("@replit/ruspty failed to load");
   }
 
   const trimBuffer = (session: TerminalSession) => {
